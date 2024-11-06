@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@400;500;700&display=swap");
+:root {
+  --primary-color: rgb(255, 92, 92);
+  --primary-variant: #ff2d2d;
+  --secondary-color: #1b9999;
+  --on-primary: rgb(250, 250, 250);
+  --on-background: rgb(66, 66, 66);
+  --on-background-alt: rgba(66, 66, 66, 0.7);
+  --background: rgba(255, 255, 255, 0.058);
+  --box-shadow: 0 5px 20px 1px rgba(0, 0, 0, 0.5);
+  --glass: rgba(255, 255, 255, 0.35);
+}
+
+[data-theme="dark"] {
+  --primary-color: rgb(150, 65, 255);
+  --primary-variant: #6c63ff;
+  --secondary-color: #03dac5;
+  --on-primary: #000;
+  --on-background: rgba(255, 255, 255, 0.9);
+  --on-background-alt: rgba(255, 255, 255, 0.7);
+  --background: #333333d7;
+  --glass: #31363f;
+}
+html {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background-image: linear-gradient(
+      to bottom right,
+      var(--background),
+      var(--background)
+    ),
+    url(../Quote_genarator/img/glassmorphism-gradient-background-with-round-glass-frame-3d-blurry-effect-for-landing-website-or-bann.jpg);
+  background-size: cover;
+  background-position: top;
+  color: var(--on-background);
+  font-family: Lato, sans-serif;
+  font-weight: 700;
+  text-align: center;
+  background-size: cover;
+}
+.wrapper {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+.quote-container {
+  width: auto;
+  max-width: 900px;
+  padding: 20px 30px;
+  border-radius: 10px;
+  background: var(--glass);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.671);
+}
+.quote-text {
+  font-size: 2.75rem;
+}
+.long-quote {
+  font-size: 2rem;
+}
+.author-text {
+  margin-top: 15px;
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.button-container {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  cursor: pointer;
+  font-size: 1.2rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 10px;
+  color: var(--on-primary);
+  background: var(--on-background);
+  outline: none;
+  padding: 0.5rem 1.8rem;
+  box-shadow: 0 0.3rem rgba(121, 121, 121, 0.65);
+}
+button:hover {
+  filter: brightness(110%);
+}
+button:active {
+  transform: translate(0, 0.3rem);
+  box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65);
+}
+.twitter-button:hover {
+  color: #38a1f3;
+}
+@media screen and (max-width: 1000px) {
+  .quote-container {
+    margin: auto 10px;
+  }
+  .quote-text {
+    font-size: 2.5rem;
+  }
+}
+nav {
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  position: fixed;
+  font-family: Inter, sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  padding: 25px;
+  width: 100vw;
+  /* From https://css.glass */
+  background: var(--glass);
+
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+a {
+  color: var(--on-background);
+  text-decoration: none;
+  margin-right: 25px;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+}
+a:hover {
+  color: darkmagenta;
+}
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  position: fixed;
+  right: 25px;
+  top: 20px;
+}
+
+.theme-switch-wrapper span {
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+.toggle-text {
+  position: relative;
+  top: -4px;
+  right: 5px;
+  color: var(--on-background);
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider::before {
+  background: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background: var(--primary-color);
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round::before {
+  border-radius: 50%;
+}
+
+.fas {
+  font-size: 30px;
+  margin-right: 5px;
+}
